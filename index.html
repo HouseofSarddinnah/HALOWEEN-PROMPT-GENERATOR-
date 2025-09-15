@@ -1,222 +1,169 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halloween Prompt Generator 🎃</title>
+  <title>🎃 Halloween Canva AI Prompt Generator 👻</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Griffy:wght@400&display=swap');
-    
-    body { 
-      font-family: 'Griffy', cursive; 
-      background: linear-gradient(135deg, #0d0d0d, #1a0033, #2d1b69); 
-      color: #f4f4f4; 
-      padding: 20px; 
-      min-height: 100vh;
-      margin: 0;
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #121212;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
-    
-    h1 { 
-      text-align: center; 
-      color: #ff7518; 
-      font-family: 'Creepster', cursive;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes glow {
-      from { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px #ff7518; }
-      to { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px #ff7518, 0 0 30px #ff7518; }
-    }
-    
-    .container { 
-      max-width: 900px; 
-      margin: 0 auto; 
-      background: rgba(26,26,26,0.9); 
-      padding: 30px; 
-      border-radius: 15px; 
-      box-shadow: 0 0 25px rgba(255,117,24,0.4);
-      border: 2px solid #ff7518;
-    }
-    
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+
+    h1 {
+      font-size: 1.8em;
       margin-bottom: 20px;
+      color: #ff914d;
+      text-shadow: 0 0 10px #ff914d;
     }
-    
-    .form-group {
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,117,24,0.3);
+
+    .card {
+      background: #1f1f1f;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 15px auto;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      text-align: left;
     }
-    
-    label { 
-      display: block; 
-      margin-bottom: 8px; 
-      font-weight: bold; 
-      color: #ff9d5c;
-      font-size: 1.1rem;
+
+    .card h3 {
+      font-size: 1.1em;
+      margin-bottom: 8px;
+      color: #ffde59;
     }
-    
-    select, button, textarea { 
-      width: 100%; 
-      margin: 8px 0; 
-      padding: 12px; 
-      border-radius: 10px; 
-      border: 2px solid #ff7518; 
-      background: rgba(255,255,255,0.9);
-      color: #1a1a1a;
-      font-family: 'Griffy', cursive;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-    
-    select:focus, textarea:focus {
-      outline: none;
-      border-color: #ffaa66;
-      box-shadow: 0 0 10px rgba(255,117,24,0.5);
-    }
-    
-    button { 
-      background: linear-gradient(45deg, #ff7518, #e65c00); 
-      color: #fff; 
-      font-weight: bold; 
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255,117,24,0.3);
-    }
-    
-    button:hover { 
-      background: linear-gradient(45deg, #e65c00, #cc5200);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,117,24,0.5);
-    }
-    
-    textarea { 
-      height: 160px; 
-      resize: vertical;
-      line-height: 1.5;
-    }
-    
-    .preset-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 25px;
-      justify-content: center;
-    }
-    
-    .preset-btn {
-      padding: 8px 16px;
-      background: rgba(139, 92, 246, 0.8);
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
       border: none;
-      border-radius: 20px;
+      background: #2b2b2b;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    button {
+      margin: 20px auto;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff914d, #ff4d6d);
       color: white;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      width: auto;
-      margin: 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      transition: 0.3s;
     }
-    
-    .preset-btn:hover {
-      background: rgba(236, 72, 153, 0.8);
-      transform: translateY(-2px);
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #ff4d6d, #ff914d);
     }
-    
+
+    #output {
+      margin-top: 25px;
+      padding: 15px;
+      background: #2b2b2b;
+      border-radius: 12px;
+      font-size: 1em;
+      white-space: pre-wrap;
+    }
+
     .copy-btn {
-      background: linear-gradient(45deg, #059669, #10b981);
       margin-top: 10px;
-    }
-    
-    .copy-btn:hover {
-      background: linear-gradient(45deg, #10b981, #059669);
-    }
-    
-    .random-btn {
-      background: linear-gradient(45deg, #7c3aed, #a855f7);
-      margin-top: 10px;
-    }
-    
-    .random-btn:hover {
-      background: linear-gradient(45deg, #a855f7, #7c3aed);
-    }
-    
-    .checkbox-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 8px;
-      margin-top: 10px;
-    }
-    
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      font-size: 0.9rem;
-      color: #f4f4f4;
-      cursor: pointer;
-      padding: 5px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    
-    .checkbox-label:hover {
-      background: rgba(255,117,24,0.2);
-    }
-    
-    .checkbox-label input[type="checkbox"] {
-      width: auto;
-      margin: 0 8px 0 0;
-      padding: 0;
-      transform: scale(1.2);
-      accent-color: #ff7518;
-    }
-    
-    @media (max-width: 768px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
+      background: #6a5acd;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎃 Halloween Canva AI Prompt Generator 👻</h1>
 
-    <!-- Preset Buttons -->
-    <div class="preset-buttons">
-      <button class="preset-btn" onclick="loadPreset('kawaii')">Kawaii Cute</button>
-      <button class="preset-btn" onclick="loadPreset('gothic')">Gothic Glam</button>
-      <button class="preset-btn" onclick="loadPreset('neon')">Neon Modern</button>
-      <button class="preset-btn" onclick="loadPreset('vintage')">Vintage Retro</button>
-      <button class="preset-btn" onclick="loadPreset('minimal')">Spooky Minimal</button>
-    </div>
+  <h1>🎃 Halloween Canva AI Prompt Generator 👻</h1>
 
-    <!-- Form Fields -->
-    <!-- (unchanged, all your selects/checkboxes/buttons here) -->
-
-    <button onclick="generatePrompt()">🎃 Generate Prompt</button>
-    <button class="random-btn" onclick="randomizeAll()">🎲 Surprise Me</button>
-
-    <textarea id="output" placeholder="Your AI prompt will appear here..."></textarea>
-
-    <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button>
+  <div class="card">
+    <h3>🎨 Choose Style/Theme:</h3>
+    <select id="style">
+      <option>Kawaii Cute</option>
+      <option>Gothic Glam</option>
+      <option>Neon Modern</option>
+      <option>Vintage Retro</option>
+      <option>Spooky Minimal</option>
+    </select>
   </div>
 
-  <!-- JS Section -->
+  <div class="card">
+    <h3>👻 Main Element:</h3>
+    <select id="element">
+      <option>Kawaii Pastel Ghosts</option>
+      <option>Pumpkin/Jack-o'-lantern</option>
+      <option>Haunted House</option>
+      <option>Black Cat</option>
+      <option>Skeleton</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h3>🌙 Background:</h3>
+    <select id="background">
+      <option>Transparent Background</option>
+      <option>Graveyard Night</option>
+      <option>Haunted Forest</option>
+      <option>Full Moon Sky</option>
+      <option>Purple Mist</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h3>✨ Text Style:</h3>
+    <select id="text">
+      <option>Dripping Horror</option>
+      <option>Glitter Script</option>
+      <option>Bold Gothic</option>
+      <option>3D Neon</option>
+      <option>Handwritten Spooky</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h3>🎨 Color Palette:</h3>
+    <select id="palette">
+      <option>Classic Orange & Black</option>
+      <option>Neon Pink & Green</option>
+      <option>Purple & Silver</option>
+      <option>Blood Red & Black</option>
+      <option>Pastel Candy Colors</option>
+    </select>
+  </div>
+
+  <button onclick="generatePrompt()">🎃 Generate Prompt</button>
+
+  <div id="output"></div>
+  <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button>
+
   <script>
-    /* your full JavaScript (presets, generatePrompt, randomizeAll, copyPrompt, showNotification, etc.) */
-    /* unchanged, except cleaned up at the bottom */
-    generatePrompt();
+    function generatePrompt() {
+      const style = document.getElementById("style").value;
+      const element = document.getElementById("element").value;
+      const background = document.getElementById("background").value;
+      const text = document.getElementById("text").value;
+      const palette = document.getElementById("palette").value;
+
+      const prompt = `Capturing the vibe of a ${style} design featuring ${element}, with a ${background}. Use ${palette} with ${text} typography. Perfect for Etsy best-sellers, digital printables, T-shirts, and stickers. Output as transparent PNG. 🎃👻✨`;
+
+      document.getElementById("output").innerText = prompt;
+    }
+
+    function copyPrompt() {
+      const output = document.getElementById("output").innerText;
+      navigator.clipboard.writeText(output).then(() => {
+        alert("Prompt copied to clipboard!");
+      });
+    }
   </script>
+
 </body>
 </html>
