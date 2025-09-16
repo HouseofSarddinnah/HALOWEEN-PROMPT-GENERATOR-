@@ -3,167 +3,604 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎃 Halloween Canva AI Prompt Generator 👻</title>
+  <title>Halloween Prompt Generator 🎃</title>
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #121212;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Griffy:wght@400&display=swap');
+    
+    body { 
+      font-family: 'Griffy', cursive; 
+      background: linear-gradient(135deg, #0d0d0d, #1a0033, #2d1b69); 
+      color: #f4f4f4; 
+      padding: 20px; 
+      min-height: 100vh;
+      margin: 0;
     }
-
-    h1 {
-      font-size: 1.8em;
+    
+    h1 { 
+      text-align: center; 
+      color: #ff7518; 
+      font-family: 'Creepster', cursive;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px #ff7518; }
+      to { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px #ff7518, 0 0 30px #ff7518; }
+    }
+    
+    .container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      background: rgba(26,26,26,0.9); 
+      padding: 30px; 
+      border-radius: 15px; 
+      box-shadow: 0 0 25px rgba(255,117,24,0.4);
+      border: 2px solid #ff7518;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
       margin-bottom: 20px;
-      color: #ff914d;
-      text-shadow: 0 0 10px #ff914d;
     }
-
-    .card {
-      background: #1f1f1f;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 15px auto;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-      text-align: left;
-    }
-
-    .card h3 {
-      font-size: 1.1em;
-      margin-bottom: 8px;
-      color: #ffde59;
-    }
-
-    select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 12px;
-      border: none;
-      background: #2b2b2b;
-      color: #fff;
-      font-size: 1em;
-    }
-
-    button {
-      margin: 20px auto;
-      padding: 12px 20px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      background: linear-gradient(90deg, #ff914d, #ff4d6d);
-      color: white;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #ff4d6d, #ff914d);
-    }
-
-    #output {
-      margin-top: 25px;
+    
+    .form-group {
+      background: rgba(255,255,255,0.05);
       padding: 15px;
-      background: #2b2b2b;
-      border-radius: 12px;
-      font-size: 1em;
-      white-space: pre-wrap;
+      border-radius: 10px;
+      border: 1px solid rgba(255,117,24,0.3);
     }
-
+    
+    label { 
+      display: block; 
+      margin-bottom: 8px; 
+      font-weight: bold; 
+      color: #ff9d5c;
+      font-size: 1.1rem;
+    }
+    
+    select, button, textarea { 
+      width: 100%; 
+      margin: 8px 0; 
+      padding: 12px; 
+      border-radius: 10px; 
+      border: 2px solid #ff7518; 
+      background: rgba(255,255,255,0.9);
+      color: #1a1a1a;
+      font-family: 'Griffy', cursive;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    select:focus, textarea:focus {
+      outline: none;
+      border-color: #ffaa66;
+      box-shadow: 0 0 10px rgba(255,117,24,0.5);
+    }
+    
+    button { 
+      background: linear-gradient(45deg, #ff7518, #e65c00); 
+      color: #fff; 
+      font-weight: bold; 
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,117,24,0.3);
+    }
+    
+    button:hover { 
+      background: linear-gradient(45deg, #e65c00, #cc5200);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,117,24,0.5);
+    }
+    
+    textarea { 
+      height: 160px; 
+      resize: vertical;
+      line-height: 1.5;
+    }
+    
+    .preset-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+      justify-content: center;
+    }
+    
+    .preset-btn {
+      padding: 8px 16px;
+      background: rgba(139, 92, 246, 0.8);
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      width: auto;
+      margin: 0;
+    }
+    
+    .preset-btn:hover {
+      background: rgba(236, 72, 153, 0.8);
+      transform: translateY(-2px);
+    }
+    
     .copy-btn {
+      background: linear-gradient(45deg, #059669, #10b981);
       margin-top: 10px;
-      background: #6a5acd;
+    }
+    
+    .copy-btn:hover {
+      background: linear-gradient(45deg, #10b981, #059669);
+    }
+    
+    .random-btn {
+      background: linear-gradient(45deg, #7c3aed, #a855f7);
+      margin-top: 10px;
+    }
+    
+    .random-btn:hover {
+      background: linear-gradient(45deg, #a855f7, #7c3aed);
+    }
+    
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #f4f4f4;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    
+    .checkbox-label:hover {
+      background: rgba(255,117,24,0.2);
+    }
+    
+    .checkbox-label input[type="checkbox"] {
+      width: auto;
+      margin: 0 8px 0 0;
+      padding: 0;
+      transform: scale(1.2);
+      accent-color: #ff7518;
+    }
+    
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🎃 Halloween Canva AI Prompt Generator 👻</h1>
 
-  <h1>🎃 Halloween Canva AI Prompt Generator 👻</h1>
+    <div class="preset-buttons">
+      <button class="preset-btn" onclick="loadPreset('kawaii')">Kawaii Cute</button>
+      <button class="preset-btn" onclick="loadPreset('gothic')">Gothic Glam</button>
+      <button class="preset-btn" onclick="loadPreset('neon')">Neon Modern</button>
+      <button class="preset-btn" onclick="loadPreset('vintage')">Vintage Retro</button>
+      <button class="preset-btn" onclick="loadPreset('minimal')">Spooky Minimal</button>
+    </div>
 
-  <div class="card">
-    <h3>🎨 Choose Style/Theme:</h3>
-    <select id="style">
-      <option>Kawaii Cute</option>
-      <option>Gothic Glam</option>
-      <option>Neon Modern</option>
-      <option>Vintage Retro</option>
-      <option>Spooky Minimal</option>
-    </select>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>🎨 Choose Style/Theme:</label>
+        <select id="style">
+          <option>Kawaii Pastel Ghosts</option>
+          <option>Gothic Glam Vampire</option>
+          <option>Neon Witches</option>
+          <option>Vintage Halloween</option>
+          <option>Spooky Minimal</option>
+          <option>Chibi Pumpkin Characters</option>
+          <option>Haunted Cute Horror</option>
+          <option>Pastel Goth Halloween</option>
+          <option>Y2K Cyber Halloween</option>
+          <option>Cottagecore Spooky</option>
+          <option>Art Deco Halloween</option>
+          <option>Watercolor Halloween</option>
+          <option>Sticker Style Cute</option>
+          <option>Dark Academia Spooky</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>👻 Main Element:</label>
+        <select id="element">
+          <option>Pumpkin/Jack-o'-lantern</option>
+          <option>Ghost</option>
+          <option>Witch</option>
+          <option>Skeleton/Skull</option>
+          <option>Haunted House</option>
+          <option>Bat</option>
+          <option>Black Cat</option>
+          <option>Candy/Candy Corn</option>
+          <option>Zombie</option>
+          <option>Spider/Web</option>
+          <option>Cauldron/Potion</option>
+          <option>Vampire</option>
+          <option>Mummy</option>
+          <option>Witch Hat</option>
+          <option>Crystal Ball</option>
+          <option>Raven/Crow</option>
+          <option>Tombstone</option>
+          <option>Magic Spell Book</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🌙 Background:</label>
+        <select id="background">
+          <option>Transparent Background</option>
+          <option>Full Moon Night</option>
+          <option>Dark Forest</option>
+          <option>Graveyard</option>
+          <option>Neon Fog</option>
+          <option>Glitter Sky</option>
+          <option>Haunted Castle</option>
+          <option>Starry Night</option>
+          <option>Misty Swamp</option>
+          <option>Candy Shop</option>
+          <option>Witch's Lair</option>
+          <option>Pumpkin Patch</option>
+          <option>Magic Forest</option>
+          <option>Cosmic Space</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>✨ Text Style:</label>
+        <select id="typography">
+          <option>Dripping Horror</option>
+          <option>Elegant Cursive</option>
+          <option>Neon Glow</option>
+          <option>Cartoon Fun</option>
+          <option>Gothic Serif</option>
+          <option>Retro Vintage</option>
+          <option>Glitter Effect</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🎨 Color Palette:</label>
+        <select id="colors">
+          <option>Classic Orange & Black</option>
+          <option>Pastel Halloween</option>
+          <option>Neon Glow</option>
+          <option>Gothic Dark Purple</option>
+          <option>Vintage Sepia</option>
+          <option>Rainbow Holographic</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>📱 Output Format:</label>
+        <select id="format">
+          <option>Transparent PNG</option>
+          <option>High-Res Poster</option>
+          <option>T-Shirt Print</option>
+          <option>Sticker Pack Sheet</option>
+          <option>SVG Vector</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>😊 Choose Mood:</label>
+        <select id="mood">
+          <option>Cute</option>
+          <option>Creepy</option>
+          <option>Elegant</option>
+          <option>Cartoonish</option>
+          <option>Vintage</option>
+          <option>Pastel Goth</option>
+          <option>Cyberpunk Neon</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>⚡ Design Intensity:</label>
+        <select id="intensity">
+          <option>Minimal</option>
+          <option>Medium</option>
+          <option>Extreme</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🌟 Atmosphere:</label>
+        <select id="atmosphere">
+          <option>Glowing Candlelight</option>
+          <option>Misty Fog</option>
+          <option>Moonlight Shadows</option>
+          <option>Neon Glow</option>
+          <option>Haunted Glow</option>
+          <option>Cyberpunk Fog</option>
+          <option>Enchanted Sparkles</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🛒 Market Style:</label>
+        <select id="market">
+          <option>Etsy Best-Seller Style</option>
+          <option>Temu Cute Trendy</option>
+          <option>AliExpress Commercial</option>
+          <option>General Halloween Aesthetic</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>📏 Prompt Length:</label>
+        <select id="length">
+          <option>Short</option>
+          <option>Medium</option>
+          <option>Detailed</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>🕷️ Extra Elements:</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" value="Spiders 🕷️"> Spiders 🕷️</label>
+          <label class="checkbox-label"><input type="checkbox" value="Spider Webs 🕸️"> Spider Webs 🕸️</label>
+          <label class="checkbox-label"><input type="checkbox" value="Bats 🦇"> Bats 🦇</label>
+          <label class="checkbox-label"><input type="checkbox" value="Candles 🕯️"> Candles 🕯️</label>
+          <label class="checkbox-label"><input type="checkbox" value="Skulls 💀"> Skulls 💀</label>
+          <label class="checkbox-label"><input type="checkbox" value="Candy 🍬"> Candy 🍬</label>
+          <label class="checkbox-label"><input type="checkbox" value="Witch Hat 🧙‍♀️"> Witch Hat 🧙‍♀️</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>✨ Special Effects:</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" id="emojiToggle"> Add Halloween Emojis 🎃👻✨</label>
+          <label class="checkbox-label"><input type="checkbox" id="premiumEffects"> Add Premium Glow & Sparkle ✨👑</label>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="generatePrompt()">🎃 Generate Prompt</button>
+    <button class="random-btn" onclick="randomizeAll()">🎲 Surprise Me</button>
+
+    <textarea id="output" placeholder="Your AI prompt will appear here..."></textarea>
+
+    <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button>
   </div>
-
-  <div class="card">
-    <h3>👻 Main Element:</h3>
-    <select id="element">
-      <option>Kawaii Pastel Ghosts</option>
-      <option>Pumpkin/Jack-o'-lantern</option>
-      <option>Haunted House</option>
-      <option>Black Cat</option>
-      <option>Skeleton</option>
-    </select>
-  </div>
-
-  <div class="card">
-    <h3>🌙 Background:</h3>
-    <select id="background">
-      <option>Transparent Background</option>
-      <option>Graveyard Night</option>
-      <option>Haunted Forest</option>
-      <option>Full Moon Sky</option>
-      <option>Purple Mist</option>
-    </select>
-  </div>
-
-  <div class="card">
-    <h3>✨ Text Style:</h3>
-    <select id="text">
-      <option>Dripping Horror</option>
-      <option>Glitter Script</option>
-      <option>Bold Gothic</option>
-      <option>3D Neon</option>
-      <option>Handwritten Spooky</option>
-    </select>
-  </div>
-
-  <div class="card">
-    <h3>🎨 Color Palette:</h3>
-    <select id="palette">
-      <option>Classic Orange & Black</option>
-      <option>Neon Pink & Green</option>
-      <option>Purple & Silver</option>
-      <option>Blood Red & Black</option>
-      <option>Pastel Candy Colors</option>
-    </select>
-  </div>
-
-  <button onclick="generatePrompt()">🎃 Generate Prompt</button>
-
-  <div id="output"></div>
-  <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button>
 
   <script>
+    const presets = {
+      kawaii: {
+        style: 'Kawaii Pastel Ghosts',
+        element: 'Pumpkin/Jack-o\'-lantern',
+        background: 'Transparent Background',
+        typography: 'Cartoon Fun',
+        colors: 'Pastel Halloween',
+        format: 'Sticker Pack Sheet',
+        mood: 'Cute',
+        intensity: 'Medium',
+        atmosphere: 'Enchanted Sparkles',
+        market: 'Etsy Best-Seller Style',
+        length: 'Medium'
+      },
+      gothic: {
+        style: 'Gothic Glam Vampire',
+        element: 'Witch',
+        background: 'Full Moon Night',
+        typography: 'Gothic Serif',
+        colors: 'Gothic Dark Purple',
+        format: 'High-Res Poster',
+        mood: 'Elegant',
+        intensity: 'Extreme',
+        atmosphere: 'Moonlight Shadows',
+        market: 'General Halloween Aesthetic',
+        length: 'Detailed'
+      },
+      neon: {
+        style: 'Neon Witches',
+        element: 'Ghost',
+        background: 'Neon Fog',
+        typography: 'Neon Glow',
+        colors: 'Neon Glow',
+        format: 'SVG Vector',
+        mood: 'Cyberpunk Neon',
+        intensity: 'Extreme',
+        atmosphere: 'Neon Glow',
+        market: 'Temu Cute Trendy',
+        length: 'Medium'
+      },
+      vintage: {
+        style: 'Vintage Halloween',
+        element: 'Skeleton/Skull',
+        background: 'Graveyard',
+        typography: 'Retro Vintage',
+        colors: 'Vintage Sepia',
+        format: 'High-Res Poster',
+        mood: 'Vintage',
+        intensity: 'Medium',
+        atmosphere: 'Glowing Candlelight',
+        market: 'General Halloween Aesthetic',
+        length: 'Detailed'
+      },
+      minimal: {
+        style: 'Spooky Minimal',
+        element: 'Bat',
+        background: 'Transparent Background',
+        typography: 'Elegant Cursive',
+        colors: 'Classic Orange & Black',
+        format: 'T-Shirt Print',
+        mood: 'Elegant',
+        intensity: 'Minimal',
+        atmosphere: 'Moonlight Shadows',
+        market: 'AliExpress Commercial',
+        length: 'Short'
+      }
+    };
+
+    function loadPreset(presetName) {
+      const preset = presets[presetName];
+      if (preset) {
+        document.getElementById('style').value = preset.style;
+        document.getElementById('element').value = preset.element;
+        document.getElementById('background').value = preset.background;
+        document.getElementById('typography').value = preset.typography;
+        document.getElementById('colors').value = preset.colors;
+        document.getElementById('format').value = preset.format;
+        document.getElementById('mood').value = preset.mood;
+        document.getElementById('intensity').value = preset.intensity;
+        document.getElementById('atmosphere').value = preset.atmosphere;
+        document.getElementById('market').value = preset.market;
+        document.getElementById('length').value = preset.length;
+        generatePrompt();
+      }
+    }
+
+    const adjectives = [
+      "spooky", "haunted", "glowing", "enchanted", "mystical",
+      "creepy", "gothic", "elegant", "kawaii", "detailed",
+      "holographic", "glittering", "vintage", "cyberpunk", "cartoonish"
+    ];
+
+    const linkingWords = [
+      "create", "design", "illustrate", "generate",
+      "in an elegant", "styled with", "decorated by",
+      "inspired by", "capturing the vibe of"
+    ];
+
+    function randomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
     function generatePrompt() {
-      const style = document.getElementById("style").value;
-      const element = document.getElementById("element").value;
-      const background = document.getElementById("background").value;
-      const text = document.getElementById("text").value;
-      const palette = document.getElementById("palette").value;
+      let style = document.getElementById("style").value;
+      let element = document.getElementById("element").value;
+      let background = document.getElementById("background").value;
+      let colors = document.getElementById("colors").value;
+      let typography = document.getElementById("typography").value;
+      let mood = document.getElementById("mood").value;
+      let intensity = document.getElementById("intensity").value;
+      let atmosphere = document.getElementById("atmosphere").value;
+      let market = document.getElementById("market").value;
+      let format = document.getElementById("format").value;
+      let length = document.getElementById("length").value;
 
-      const prompt = `Capturing the vibe of a ${style} design featuring ${element}, with a ${background}. Use ${palette} with ${text} typography. Perfect for Etsy best-sellers, digital printables, T-shirts, and stickers. Output as transparent PNG. 🎃👻✨`;
-
-      document.getElementById("output").innerText = prompt;
-    }
-
-    function copyPrompt() {
-      const output = document.getElementById("output").innerText;
-      navigator.clipboard.writeText(output).then(() => {
-        alert("Prompt copied to clipboard!");
+      let extras = [];
+      document.querySelectorAll("input[type=checkbox]:checked").forEach(el => {
+        if (el.id !== "emojiToggle" && el.id !== "premiumEffects") {
+          extras.push(el.value);
+        }
       });
-    }
-  </script>
 
-</body>
+      const transparentOption = background.toLowerCase() === "transparent background" 
+        ? "with a fully transparent background so it can be used as stickers, overlays, T-shirts, and digital printables" 
+        : `set against a ${background.toLowerCase()} background`;
+
+      let prompt = `${randomItem(linkingWords)} a ${intensity.toLowerCase()}, ${randomItem(adjectives)} ${style} featuring ${element}`;
+      if (extras.length > 0) prompt += ` with ${extras.join(", ")}`;
+      prompt += `, ${transparentOption}, set in ${atmosphere.toLowerCase()}.`;
+      prompt += ` Use ${colors} with ${typography} typography. The mood should feel ${mood.toLowerCase()}, perfectly styled for ${market}.`;
+      prompt += ` Output as ${format}.`;
+
+      // Add length-based details
+      if(length==="Medium"){ prompt+= " Make it trendy, vibrant, and commercial-ready."; }
+      if(length==="Detailed"){ prompt+= " Ensure high resolution, professional quality, perfect for print and digital use, with stunning visual impact and commercial appeal."; }
+
+      if (document.getElementById("emojiToggle").checked) {
+        prompt += " 🎃👻🦇🕷️✨";
+      }
+      if (document.getElementById("premiumEffects").checked) {
+        prompt += " Add ultra-detailed glow, glitter, and holographic sparkle for a premium finish.";
+      }
+
+      document.getElementById("output").value = prompt;
+    }
+
+    function randomizeAll(){
+      ['style','element','background','colors','typography','format','mood','intensity','atmosphere','market','length'].forEach(id=>{
+        let sel=document.getElementById(id);
+        sel.selectedIndex=Math.floor(Math.random()*sel.options.length);
+      });
+      
+      // Randomize checkboxes
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = Math.random() > 0.7; // 30% chance to be checked
+      });
+      
+      generatePrompt();
+    }
+
+    function copyPrompt(){
+      let txt=document.getElementById('output');
+      txt.select(); 
+      try {
+        document.execCommand('copy');
+        showNotification('✅ Prompt copied!');
+      } catch (err) {
+        showNotification('❌ Copy failed. Please select and copy manually.');
+      }
+    }
+
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #059669, #10b981);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        font-weight: bold;
+        animation: slideIn 0.5s ease-out;
+      `;
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.5s ease-in';
+        setTimeout(() => notification.remove(), 500);
+      }, 3000);
+    }
+
+    // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Generate initial prompt
+    generatePrompt();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97fbd5a0b1a3ab5d',t:'MTc1Nzk3ODIxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
