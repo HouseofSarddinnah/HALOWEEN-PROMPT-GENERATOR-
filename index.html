@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halloween Prompt Generator 🎃</title>
+  <title>🎃 Master Halloween + Autumn Generator 🍂</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Griffy:wght@400&display=swap');
     
     body { 
       font-family: 'Griffy', cursive; 
-      background: linear-gradient(135deg, #0d0d0d, #1a0033, #2d1b69); 
+      background: linear-gradient(135deg, #0d0d0d, #1a0033, #2d1b69, #8B4513); 
       color: #f4f4f4; 
       padding: 20px; 
       min-height: 100vh;
@@ -18,20 +18,40 @@
     
     h1 { 
       text-align: center; 
-      color: #ff7518; 
       font-family: 'Creepster', cursive;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #ff7518;
+      text-shadow: 
+        2px 2px 0px #000000,
+        4px 4px 8px rgba(0,0,0,0.8),
+        0 0 20px #ff7518,
+        0 0 30px #ffaa00;
       animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
     }
     
     @keyframes glow {
-      from { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px #ff7518; }
-      to { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px #ff7518, 0 0 30px #ff7518; }
+      from { 
+        text-shadow: 
+          2px 2px 0px #000000,
+          4px 4px 8px rgba(0,0,0,0.8),
+          0 0 20px #ff7518,
+          0 0 30px #ffaa00;
+      }
+      to { 
+        text-shadow: 
+          2px 2px 0px #000000,
+          4px 4px 8px rgba(0,0,0,0.8),
+          0 0 30px #ff7518,
+          0 0 40px #ffaa00,
+          0 0 50px #ff4500;
+      }
     }
     
     .container { 
-      max-width: 900px; 
+      max-width: 1200px; 
       margin: 0 auto; 
       background: rgba(26,26,26,0.9); 
       padding: 30px; 
@@ -190,300 +210,530 @@
 </head>
 <body>
   <div class="container">
-    <h1>🎃 Halloween Canva AI Prompt Generator 👻</h1>
+    <h1>🎃 Master Halloween + Autumn Generator 🍂</h1>
 
     <div class="preset-buttons">
-      <button class="preset-btn" onclick="loadPreset('kawaii')">Kawaii Cute</button>
-      <button class="preset-btn" onclick="loadPreset('gothic')">Gothic Glam</button>
-      <button class="preset-btn" onclick="loadPreset('neon')">Neon Modern</button>
-      <button class="preset-btn" onclick="loadPreset('vintage')">Vintage Retro</button>
-      <button class="preset-btn" onclick="loadPreset('minimal')">Spooky Minimal</button>
+      <button class="preset-btn" onclick="loadPreset('cozyAutumn')">Cozy Autumn Harvest</button>
+      <button class="preset-btn" onclick="loadPreset('bossBabe')">Boss Babe Witch</button>
+      <button class="preset-btn" onclick="loadPreset('kawaiCoffee')">Kawaii Coffee Ghosts</button>
+      <button class="preset-btn" onclick="loadPreset('gothicMansion')">Gothic Mansion</button>
+      <button class="preset-btn" onclick="loadPreset('vintageHarvest')">Vintage Harvest</button>
+      <button class="preset-btn" onclick="loadPreset('neonGraffiti')">Neon Graffiti</button>
+      <button class="preset-btn" onclick="loadPreset('farmhouseCozy')">Farmhouse Cozy</button>
+      <button class="preset-btn" onclick="loadPreset('fashionSkeleton')">Fashion Skeleton</button>
     </div>
 
     <div class="form-grid">
       <div class="form-group">
-        <label>🎨 Choose Style/Theme:</label>
-        <select id="style">
-          <option>Kawaii Pastel Ghosts</option>
-          <option>Gothic Glam Vampire</option>
-          <option>Neon Witches</option>
-          <option>Vintage Halloween</option>
-          <option>Spooky Minimal</option>
-          <option>Chibi Pumpkin Characters</option>
-          <option>Haunted Cute Horror</option>
-          <option>Pastel Goth Halloween</option>
-          <option>Y2K Cyber Halloween</option>
-          <option>Cottagecore Spooky</option>
-          <option>Art Deco Halloween</option>
-          <option>Watercolor Halloween</option>
-          <option>Sticker Style Cute</option>
-          <option>Dark Academia Spooky</option>
+        <label>👻 Halloween Characters:</label>
+        <select id="characters">
+          <option>Ornate sugar skull (Day of the Dead, colorful, decorative)</option>
+          <option>Skeleton (grinning, reclining, relaxed pose)</option>
+          <option>Skeleton witch (flowing silver hair, casting spells)</option>
+          <option>Adorable kawaii ghost (with black witch hat, crystal ball, spell books)</option>
+          <option>Boss Babe figure (motivational skeleton figure, empowering)</option>
+          <option>Ghosts (cute, kawaii, friendly expressions)</option>
+          <option>Ghosts (patchwork, quilted, crafty style)</option>
+          <option>Ghosts (stylish with sunglasses or bows, trendy)</option>
+          <option>Group ghosts (formations, spooky gang, friends)</option>
+          <option>Cozy coffee ghosts (with mugs, steaming drinks)</option>
+          <option>Fashionable ghosts (bubble tea, purses, accessories)</option>
+          <option>Skeletons (relaxed with finger guns, cool pose)</option>
+          <option>Skeletons (cozy with beanie, casual, comfortable)</option>
+          <option>Detailed skeleton witches (casting spells, magical)</option>
+          <option>Fashion skeletons (trendy, stylish, chic)</option>
+          <option>Spell-caster skeletons (mystical, powerful)</option>
+          <option>Pumpkins (classic carved jack-o'-lanterns)</option>
+          <option>Pumpkins (smiling, friendly, welcoming)</option>
+          <option>Pumpkins (sinister, spooky, dramatic)</option>
+          <option>Pumpkins (with top hats, fancy, elegant)</option>
+          <option>Pumpkins (pumpkin hats, festive, decorative)</option>
+          <option>Giraffe pattern pumpkins (unique, spotted, trendy)</option>
+          <option>Pumpkins (glowing eyes, mystical, magical)</option>
+          <option>Black cats (playful, mischievous poses)</option>
+          <option>Black cats (mischievous yellow eyes, kawaii)</option>
+          <option>Black cats (glowing eyes, mysterious, magical)</option>
+          <option>Great horned owls (majestic, wise, autumn)</option>
+          <option>Witches (cartoon style, friendly, approachable)</option>
+          <option>Witches (gothic, dark, dramatic, mysterious)</option>
+          <option>Skeleton witches (spellbooks, staffs, magical)</option>
+          <option>Fashion witches (accessories, trendy, stylish)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>👻 Main Element:</label>
-        <select id="element">
-          <option>Pumpkin/Jack-o'-lantern</option>
-          <option>Ghost</option>
-          <option>Witch</option>
-          <option>Skeleton/Skull</option>
-          <option>Haunted House</option>
-          <option>Bat</option>
-          <option>Black Cat</option>
-          <option>Candy/Candy Corn</option>
-          <option>Zombie</option>
-          <option>Spider/Web</option>
-          <option>Cauldron/Potion</option>
-          <option>Vampire</option>
-          <option>Mummy</option>
-          <option>Witch Hat</option>
-          <option>Crystal Ball</option>
-          <option>Raven/Crow</option>
-          <option>Tombstone</option>
-          <option>Magic Spell Book</option>
+        <label>🍂 Autumn & Harvest Elements:</label>
+        <select id="autumn">
+          <option>Peonies (deep purple, velvety petals, luxurious)</option>
+          <option>Chrysanthemums (burgundy, cascading, autumn blooms)</option>
+          <option>Twisted blackberry vines (small thorns, gothic)</option>
+          <option>Copper-toned maple leaves (metallic, autumn)</option>
+          <option>Delicate fern fronds (intricate, natural)</option>
+          <option>Autumn leaves (mixed colors, falling, seasonal)</option>
+          <option>Fireflies (glowing, magical, twilight)</option>
+          <option>Patchwork cornucopia (overflowing with gourds, mini pumpkins)</option>
+          <option>Sunflowers (bright, cheerful, autumn blooms)</option>
+          <option>Daisies (white, delicate, fall flowers)</option>
+          <option>Oak leaves (detailed, autumn colors, falling)</option>
+          <option>Wheat stalks (golden, harvest, rustic)</option>
+          <option>Berries (cranberries, autumn berries, clusters)</option>
+          <option>Acorns (scattered, oak tree seeds, fall)</option>
+          <option>Plaid patterns (cozy, farmhouse, autumn)</option>
+          <option>Burlap bows (rustic, natural, harvest)</option>
+          <option>Rustic harvest textures (wood, barn, country)</option>
+          <option>Autumn cornucopia (traditional, overflowing)</option>
+          <option>Fall foliage (mixed leaves, colorful, seasonal)</option>
+          <option>Pumpkin patches (fields, harvest, autumn scene)</option>
+          <option>Apple orchards (trees, fruit, fall harvest)</option>
+          <option>Hay bales (round, rustic, farm, autumn)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>🌙 Background:</label>
-        <select id="background">
-          <option>Transparent Background</option>
-          <option>Full Moon Night</option>
-          <option>Dark Forest</option>
-          <option>Graveyard</option>
-          <option>Neon Fog</option>
-          <option>Glitter Sky</option>
-          <option>Haunted Castle</option>
-          <option>Starry Night</option>
-          <option>Misty Swamp</option>
-          <option>Candy Shop</option>
-          <option>Witch's Lair</option>
-          <option>Pumpkin Patch</option>
-          <option>Magic Forest</option>
-          <option>Cosmic Space</option>
+        <label>🏚️ Spooky Scenes & Gothic Elements:</label>
+        <select id="scenes">
+          <option>Spooky mansion silhouette (dramatic, atmospheric)</option>
+          <option>Full moon with bare tree branches (eerie, gothic)</option>
+          <option>Flying bats (silhouettes, spooky atmosphere)</option>
+          <option>Spiders & spider web patterns (intricate, decorative)</option>
+          <option>Magical runes & floating symbols (mystical, ethereal)</option>
+          <option>Crescent moon flourishes (decorative, celestial)</option>
+          <option>Haunted houses (spooky, glowing windows, atmospheric)</option>
+          <option>Gothic mansions (detailed architecture, dramatic)</option>
+          <option>Cemeteries (tombstones, misty, atmospheric)</option>
+          <option>Ornate headstones (detailed, gothic, decorative)</option>
+          <option>Twisted iron fences (gothic, ornamental, spooky)</option>
+          <option>Creeping ivy vines (gothic, climbing, mysterious)</option>
+          <option>Potion bottles (bubbling, colorful, mystical)</option>
+          <option>Cauldrons (bubbling, witch's brew, magical)</option>
+          <option>Crystal orbs (glowing, fortune telling, mystical)</option>
+          <option>Moons (crescent with clouds, atmospheric)</option>
+          <option>Moons (full with clouds, dramatic, glowing)</option>
+          <option>Bats (flying in groups, silhouettes, spooky)</option>
+          <option>Spiders & spider webs (intricate, decorative)</option>
+          <option>Thorny roses (gothic, dark romance, dramatic)</option>
+          <option>Glowing runes (mystical symbols, magical)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>✨ Text Style:</label>
+        <label>🎀 Accessories & Magical Props:</label>
+        <select id="accessories">
+          <option>Crystal-topped staff (magical, ornate, mystical)</option>
+          <option>Ancient grimoire (open spellbook, aged, mystical)</option>
+          <option>Crystal orbs (glowing, fortune telling, magical)</option>
+          <option>Magical energy swirls (galaxies of purple and blue)</option>
+          <option>Potions (glowing, bubbling, colorful bottles)</option>
+          <option>Seashells and starfish (Halloween beach scene, tropical)</option>
+          <option>Miniature pumpkins & charms (decorative, festive)</option>
+          <option>Coffee mugs (spooky faces, Halloween themed)</option>
+          <option>Quilting tools (needles, thread, crafting)</option>
+          <option>Embroidery motifs (stitched, handmade, crafted)</option>
+          <option>Candy corn (festive, colorful, sweet treats)</option>
+          <option>Lollipops (colorful, sweet, Halloween candy)</option>
+          <option>Cupcakes (Halloween themed, decorated, sweet)</option>
+          <option>Teacups & teapots (elegant, mystical, brewing)</option>
+          <option>Sugar skulls (Day of the Dead, colorful, decorative)</option>
+          <option>Tote bags (fashionable, trendy, accessories)</option>
+          <option>Leopard print accessories (wild, fashionable, trendy)</option>
+          <option>Neon graffiti splashes (urban, bold, colorful)</option>
+          <option>Whimsical spirals (decorative, magical, flowing)</option>
+          <option>Bubble tea drinks (trendy, colorful, kawaii)</option>
+          <option>Designer purses (fashionable, stylish, trendy)</option>
+          <option>Sunglasses (trendy, cool, fashionable)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>📝 Text & Phrases:</label>
+        <select id="phrases">
+          <option>Nothing's Scarier Than a Boss Babe Who Won't Back Down</option>
+          <option>Spooky Vibes</option>
+          <option>CALIFORNIA Haunted Year Round</option>
+          <option>MYSTIC HOUR</option>
+          <option>Happy Halloween</option>
+          <option>Trick or Treat</option>
+          <option>Spooky Season</option>
+          <option>BOO-TIFUL</option>
+          <option>Ghoul Gang!</option>
+          <option>Spell Caster</option>
+          <option>Creepy Crew</option>
+          <option>Unite</option>
+          <option>This is the Season to Be Creepy</option>
+          <option>Doctor (with Halloween-themed letter patterns)</option>
+          <option>Graveyard Shift Coffee</option>
+          <option>Beans & Boos</option>
+          <option>Midnight Brew Masters</option>
+          <option>Wickedly Caffeinated!</option>
+          <option>Sleepy Hollow Dead and Breakfast</option>
+          <option>Autumn Vibes</option>
+          <option>Harvest Blessings</option>
+          <option>Pumpkin Spice Everything</option>
+          <option>Fall in Love</option>
+          <option>Cozy Season</option>
+          <option>Thankful & Blessed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🔤 Typography Styles:</label>
         <select id="typography">
-          <option>Dripping Horror</option>
-          <option>Elegant Cursive</option>
-          <option>Neon Glow</option>
-          <option>Cartoon Fun</option>
-          <option>Gothic Serif</option>
-          <option>Retro Vintage</option>
-          <option>Glitter Effect</option>
+          <option>Gothic lettering (ornate gothic script, medieval, dramatic)</option>
+          <option>Condensed orange serif lettering (bold, Halloween themed)</option>
+          <option>Decorative block lettering (strong, impactful, bold)</option>
+          <option>Dripping horror fonts (melting, spooky, scary)</option>
+          <option>Bold distressed serif (worn, aged, textured)</option>
+          <option>Vintage retro (classic, nostalgic, timeless)</option>
+          <option>Playful cartoon fonts (fun, friendly, bubbly)</option>
+          <option>Holographic rainbow lettering (iridescent, multi-color)</option>
+          <option>Embroidery-inspired stitches (handmade, crafted)</option>
+          <option>Bubbly fonts (round, cute, cheerful)</option>
+          <option>Bold graffiti neon glow (urban, bright, electric)</option>
+          <option>Distressed textured lettering (aged, worn, vintage)</option>
+          <option>Farmhouse script (rustic, handwritten, cozy)</option>
+          <option>Classic Halloween bold serif (traditional, strong)</option>
+          <option>Autumn script (elegant, flowing, seasonal)</option>
+          <option>Metallic foil lettering (shiny, premium, elegant)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>🎨 Color Palette:</label>
+        <label>🎨 Color Palettes:</label>
         <select id="colors">
-          <option>Classic Orange & Black</option>
-          <option>Pastel Halloween</option>
-          <option>Neon Glow</option>
-          <option>Gothic Dark Purple</option>
-          <option>Vintage Sepia</option>
-          <option>Rainbow Holographic</option>
+          <option>Rich jewel tones (ivory bone, deep plum, burgundy, burnt copper)</option>
+          <option>Deep blacks, glowing oranges, mystical purples, ethereal whites</option>
+          <option>Warm orange and amber scheme (autumn sunset vibes)</option>
+          <option>Dusky orange sky (twilight, atmospheric, moody)</option>
+          <option>Silvery whites and midnight blues (moonlit, ethereal)</option>
+          <option>Classic Halloween (orange, black, white)</option>
+          <option>Deep purples, emerald greens, burgundy reds</option>
+          <option>Golden yellows (bright, warm, autumn)</option>
+          <option>Warm fall harvest (amber, rust, sage, chocolate brown)</option>
+          <option>Dusty rose, powder blue, lavender accents</option>
+          <option>Metallic foils (gold, silver, bronze, copper)</option>
+          <option>Holographic rainbow (iridescent, multi-color)</option>
+          <option>Neon graffiti splashes (bright, electric, urban)</option>
+          <option>Vintage distressed overlays (aged, muted, worn)</option>
+          <option>Embroidery thread palettes (soft, crafted, handmade)</option>
+          <option>Watercolor washes (soft, flowing, artistic)</option>
+          <option>Flat vector colors (clean, modern, bold)</option>
+          <option>Glowing mystical auras (ethereal, magical, luminous)</option>
+          <option>Autumn sunset (warm oranges, reds, yellows)</option>
+          <option>Cozy farmhouse (cream, sage, rust, brown)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🌟 Shading & Effects:</label>
+        <select id="shading">
+          <option>Vintage paper aging (distressed textures, aged look)</option>
+          <option>Crosshatching and stippled shading effects (hand-drawn, artistic)</option>
+          <option>Smooth color transitions (anime-inspired cartoon style)</option>
+          <option>Moonlit lighting (dramatic lighting, atmospheric)</option>
+          <option>Atmospheric texture overlays (moody, cinematic)</option>
+          <option>Soft gradients (smooth, blended, gentle)</option>
+          <option>Crosshatching (hand-drawn, artistic, textured)</option>
+          <option>Stippled shading (dotted, detailed, vintage)</option>
+          <option>Distressed textures (aged, worn, vintage)</option>
+          <option>Glowing highlights (bright, luminous, magical)</option>
+          <option>Embroidery thread texture (stitched, handmade)</option>
+          <option>Watercolor blending (soft, flowing, artistic)</option>
+          <option>Gentle pastel shading (soft, light, delicate)</option>
+          <option>Bold cartoon outlines (strong, defined, playful)</option>
+          <option>Neon glow effects (electric, bright, modern)</option>
+          <option>Vintage texture overlays (aged, distressed)</option>
+          <option>Metallic shine (reflective, premium, elegant)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🌅 Background & Scene Settings:</label>
+        <select id="background">
+          <option>Vintage damask pattern (charcoal and cream, elegant)</option>
+          <option>Eerie tropical atmosphere (twisted palm trees, hanging Spanish moss)</option>
+          <option>Gothic Victorian details and flourishes (ornate, dramatic)</option>
+          <option>Moonlit lighting (dramatic lighting, atmospheric)</option>
+          <option>Atmospheric texture overlays (moody, cinematic)</option>
+          <option>Transparent background (isolated design)</option>
+          <option>Solid color background (clean, modern)</option>
+          <option>Gradient background (smooth color transitions)</option>
+          <option>Textured paper background (vintage, aged)</option>
+          <option>Starry night sky (mystical, celestial)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🎯 Design Theme:</label>
+        <select id="theme">
+          <option>Spooky Halloween (traditional, scary, dramatic)</option>
+          <option>Cute & Kawaii (friendly, adorable, sweet)</option>
+          <option>Gothic & Dark (mysterious, elegant, dramatic)</option>
+          <option>Cozy Autumn (warm, comfortable, seasonal)</option>
+          <option>Trendy & Fashion (modern, stylish, chic)</option>
+          <option>Vintage Retro (classic, nostalgic, timeless)</option>
+          <option>Farmhouse Rustic (country, natural, cozy)</option>
+          <option>Neon Modern (electric, bright, contemporary)</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>📱 Output Format:</label>
         <select id="format">
-          <option>Transparent PNG</option>
-          <option>High-Res Poster</option>
-          <option>T-Shirt Print</option>
-          <option>Sticker Pack Sheet</option>
-          <option>SVG Vector</option>
+          <option>T-Shirt Print Ready (centered, proper margins)</option>
+          <option>Etsy Listing Ready (commercial-use, professional)</option>
+          <option>Canva Template (editable, user-friendly)</option>
+          <option>Digital Download (high-res, versatile)</option>
+          <option>Social Media Post (Instagram, Facebook ready)</option>
+          <option>Merchandise Ready (products, commercial use)</option>
+          <option>Sticker Design (transparent, cut-ready)</option>
+          <option>Logo Design (scalable, professional)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>😊 Choose Mood:</label>
-        <select id="mood">
-          <option>Cute</option>
-          <option>Creepy</option>
-          <option>Elegant</option>
-          <option>Cartoonish</option>
-          <option>Vintage</option>
-          <option>Pastel Goth</option>
-          <option>Cyberpunk Neon</option>
+        <label>⚡ Design Complexity:</label>
+        <select id="complexity">
+          <option>Simple & Clean</option>
+          <option>Balanced & Professional</option>
+          <option>Rich & Detailed</option>
+          <option>Maximum Impact</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>⚡ Design Intensity:</label>
-        <select id="intensity">
-          <option>Minimal</option>
-          <option>Medium</option>
-          <option>Extreme</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>🌟 Atmosphere:</label>
-        <select id="atmosphere">
-          <option>Glowing Candlelight</option>
-          <option>Misty Fog</option>
-          <option>Moonlight Shadows</option>
-          <option>Neon Glow</option>
-          <option>Haunted Glow</option>
-          <option>Cyberpunk Fog</option>
-          <option>Enchanted Sparkles</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>🛒 Market Style:</label>
-        <select id="market">
-          <option>Etsy Best-Seller Style</option>
-          <option>Temu Cute Trendy</option>
-          <option>AliExpress Commercial</option>
-          <option>General Halloween Aesthetic</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>📏 Prompt Length:</label>
-        <select id="length">
-          <option>Short</option>
-          <option>Medium</option>
-          <option>Detailed</option>
+        <label>🎪 Aesthetic Style:</label>
+        <select id="aesthetic">
+          <option>Instagram-Worthy (trendy, social media ready)</option>
+          <option>Commercially Viable (market-ready, sellable)</option>
+          <option>Spooky Charm (Halloween magic, enchanting)</option>
+          <option>Cozy Autumn Warmth (seasonal, comfortable)</option>
+          <option>Vintage Retro Appeal (classic, timeless)</option>
+          <option>Trendy Playful (modern, fun, youthful)</option>
         </select>
       </div>
     </div>
 
     <div class="form-grid">
       <div class="form-group">
-        <label>🕷️ Extra Elements:</label>
+        <label>🛍️ Select Product Types:</label>
         <div class="checkbox-grid">
-          <label class="checkbox-label"><input type="checkbox" value="Spiders 🕷️"> Spiders 🕷️</label>
-          <label class="checkbox-label"><input type="checkbox" value="Spider Webs 🕸️"> Spider Webs 🕸️</label>
-          <label class="checkbox-label"><input type="checkbox" value="Bats 🦇"> Bats 🦇</label>
-          <label class="checkbox-label"><input type="checkbox" value="Candles 🕯️"> Candles 🕯️</label>
-          <label class="checkbox-label"><input type="checkbox" value="Skulls 💀"> Skulls 💀</label>
-          <label class="checkbox-label"><input type="checkbox" value="Candy 🍬"> Candy 🍬</label>
-          <label class="checkbox-label"><input type="checkbox" value="Witch Hat 🧙‍♀️"> Witch Hat 🧙‍♀️</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="T-Shirt" checked> T-Shirt</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Hoodie"> Hoodie / Sweatshirt</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Tote Bag"> Tote Bag</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Mug"> Mug</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Sticker"> Sticker</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Poster"> Poster / Wall Hanging</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Phone Case"> Phone Case</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Pillow"> Pillow</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Notebook"> Notebook / Journal</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Greeting Card"> Greeting Card</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Magnet"> Magnet</label>
+          <label class="checkbox-label"><input type="checkbox" name="productType" value="Keychain"> Keychain</label>
         </div>
       </div>
 
       <div class="form-group">
-        <label>✨ Special Effects:</label>
+        <label>☕ Halloween Mug Designs:</label>
         <div class="checkbox-grid">
-          <label class="checkbox-label"><input type="checkbox" id="emojiToggle"> Add Halloween Emojis 🎃👻✨</label>
-          <label class="checkbox-label"><input type="checkbox" id="premiumEffects"> Add Premium Glow & Sparkle ✨👑</label>
+          <label class="checkbox-label"><input type="checkbox" value="Skulls, Skeletons, Ghosts, Bats, Pumpkins, Black Cats, Witches"> Classic Halloween Imagery</label>
+          <label class="checkbox-label"><input type="checkbox" value="I Put A Spell On You, Witches Brew, Dead Inside But Still Caffeinated, Oh Look Another Glorious Morning Makes Me Sick"> Witty & Humorous Text</label>
+          <label class="checkbox-label"><input type="checkbox" value="Halloween, Terrifier, Scream, The Nightmare Before Christmas, Hocus Pocus"> Horror Movie & Pop Culture</label>
+          <label class="checkbox-label"><input type="checkbox" value="Friendly Ghosts, Cartoon Pumpkins, Pastel Spooky Palette, Cute Bats"> Whimsical & Cute</label>
+          <label class="checkbox-label"><input type="checkbox" value="Pumpkin Shaped, Cauldron Shaped, Skull Shaped"> Shaped Mugs</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>💀 Skull & Bones Details:</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" value="Intricate floral engravings (forehead, cheekbones)"> Floral Engravings</label>
+          <label class="checkbox-label"><input type="checkbox" value="Detailed skull with aged texture"> Aged Skull Texture</label>
+          <label class="checkbox-label"><input type="checkbox" value="Ornate bone patterns"> Ornate Bone Patterns</label>
+          <label class="checkbox-label"><input type="checkbox" value="Sugar skull decorations"> Sugar Skull Details</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>🕷️ Extra Decorative Elements:</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" value="Floating sparkles"> Floating Sparkles</label>
+          <label class="checkbox-label"><input type="checkbox" value="Decorative borders"> Decorative Borders</label>
+          <label class="checkbox-label"><input type="checkbox" value="Mystical symbols"> Mystical Symbols</label>
+          <label class="checkbox-label"><input type="checkbox" value="Autumn leaves scattered"> Autumn Leaves</label>
+          <label class="checkbox-label"><input type="checkbox" value="Melting smiley faces (dripping, spooky, playful)"> Melting Smiley Faces</label>
+          <label class="checkbox-label"><input type="checkbox" value="Spider webs with spiders"> Spider Webs & Spiders</label>
+          <label class="checkbox-label"><input type="checkbox" value="Magical fireflies"> Magical Fireflies</label>
+          <label class="checkbox-label"><input type="checkbox" value="Sparkles & magical wisps"> Sparkles & Wisps</label>
+          <label class="checkbox-label"><input type="checkbox" value="Floating autumn leaves"> Floating Leaves</label>
+          <label class="checkbox-label"><input type="checkbox" value="Tiny pumpkin charms"> Pumpkin Charms</label>
+          <label class="checkbox-label"><input type="checkbox" value="Star patterns"> Star Patterns</label>
+          <label class="checkbox-label"><input type="checkbox" value="Heart accents"> Heart Accents</label>
+          <label class="checkbox-label"><input type="checkbox" value="Swirl patterns"> Swirl Patterns</label>
+          <label class="checkbox-label"><input type="checkbox" value="Vintage frames"> Vintage Frames</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>✨ Premium Features:</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" id="transparentBg"> Transparent Background</label>
+          <label class="checkbox-label"><input type="checkbox" id="printReady"> Print-Ready Quality</label>
+          <label class="checkbox-label"><input type="checkbox" id="highRes"> High Resolution</label>
+          <label class="checkbox-label"><input type="checkbox" id="noCutoff"> No Cut-off Elements</label>
+          <label class="checkbox-label"><input type="checkbox" id="properMargins"> Proper Margins</label>
+          <label class="checkbox-label"><input type="checkbox" id="isolated"> Isolated Design</label>
+          <label class="checkbox-label"><input type="checkbox" id="commercial"> Commercial Use Ready</label>
+          <label class="checkbox-label"><input type="checkbox" id="modern"> Modern & Instagram-Worthy</label>
         </div>
       </div>
     </div>
 
-    <button onclick="generatePrompt()">🎃 Generate Prompt</button>
+    <button onclick="generatePrompt()">🎃 Generate Master Design Prompt</button>
     <button class="random-btn" onclick="randomizeAll()">🎲 Surprise Me</button>
 
-    <textarea id="output" placeholder="Your AI prompt will appear here..."></textarea>
+    <textarea id="output" placeholder="Your comprehensive Halloween + Autumn design prompt will appear here..."></textarea>
 
     <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button>
   </div>
 
   <script>
     const presets = {
-      kawaii: {
-        style: 'Kawaii Pastel Ghosts',
-        element: 'Pumpkin/Jack-o\'-lantern',
-        background: 'Transparent Background',
-        typography: 'Cartoon Fun',
-        colors: 'Pastel Halloween',
-        format: 'Sticker Pack Sheet',
-        mood: 'Cute',
-        intensity: 'Medium',
-        atmosphere: 'Enchanted Sparkles',
-        market: 'Etsy Best-Seller Style',
-        length: 'Medium'
+      cozyAutumn: {
+        characters: 'Cozy coffee ghosts (with mugs, steaming drinks)',
+        autumn: 'Patchwork cornucopia (overflowing with gourds, mini pumpkins)',
+        scenes: 'Crystal orbs (glowing, fortune telling, mystical)',
+        accessories: 'Coffee mugs (spooky faces, Halloween themed)',
+        phrases: 'Cozy Season',
+        typography: 'Farmhouse script (rustic, handwritten, cozy)',
+        colors: 'Warm fall harvest (amber, rust, sage, chocolate brown)',
+        shading: 'Watercolor blending (soft, flowing, artistic)',
+        theme: 'Cozy Autumn (warm, comfortable, seasonal)',
+        format: 'Etsy Listing Ready (commercial-use, professional)',
+        complexity: 'Balanced & Professional',
+        aesthetic: 'Cozy Autumn Warmth (seasonal, comfortable)'
       },
-      gothic: {
-        style: 'Gothic Glam Vampire',
-        element: 'Witch',
-        background: 'Full Moon Night',
-        typography: 'Gothic Serif',
-        colors: 'Gothic Dark Purple',
-        format: 'High-Res Poster',
-        mood: 'Elegant',
-        intensity: 'Extreme',
-        atmosphere: 'Moonlight Shadows',
-        market: 'General Halloween Aesthetic',
-        length: 'Detailed'
+      bossBabe: {
+        characters: 'Fashion witches (accessories, trendy, stylish)',
+        autumn: 'Oak leaves (detailed, autumn colors, falling)',
+        scenes: 'Glowing runes (mystical symbols, magical)',
+        accessories: 'Designer purses (fashionable, stylish, trendy)',
+        phrases: 'Nothing\'s Scarier Than a Boss Babe Who Won\'t Back Down',
+        typography: 'Metallic foil lettering (shiny, premium, elegant)',
+        colors: 'Metallic foils (gold, silver, bronze, copper)',
+        shading: 'Glowing highlights (bright, luminous, magical)',
+        theme: 'Trendy & Fashion (modern, stylish, chic)',
+        format: 'Social Media Post (Instagram, Facebook ready)',
+        complexity: 'Rich & Detailed',
+        aesthetic: 'Instagram-Worthy (trendy, social media ready)'
       },
-      neon: {
-        style: 'Neon Witches',
-        element: 'Ghost',
-        background: 'Neon Fog',
-        typography: 'Neon Glow',
-        colors: 'Neon Glow',
-        format: 'SVG Vector',
-        mood: 'Cyberpunk Neon',
-        intensity: 'Extreme',
-        atmosphere: 'Neon Glow',
-        market: 'Temu Cute Trendy',
-        length: 'Medium'
+      kawaiCoffee: {
+        characters: 'Fashionable ghosts (bubble tea, purses, accessories)',
+        autumn: 'Sunflowers (bright, cheerful, autumn blooms)',
+        scenes: 'Potion bottles (bubbling, colorful, mystical)',
+        accessories: 'Bubble tea drinks (trendy, colorful, kawaii)',
+        phrases: 'Beans & Boos',
+        typography: 'Bubbly fonts (round, cute, cheerful)',
+        colors: 'Dusty rose, powder blue, lavender accents',
+        shading: 'Gentle pastel shading (soft, light, delicate)',
+        theme: 'Cute & Kawaii (friendly, adorable, sweet)',
+        format: 'Sticker Design (transparent, cut-ready)',
+        complexity: 'Balanced & Professional',
+        aesthetic: 'Trendy Playful (modern, fun, youthful)'
       },
-      vintage: {
-        style: 'Vintage Halloween',
-        element: 'Skeleton/Skull',
-        background: 'Graveyard',
-        typography: 'Retro Vintage',
-        colors: 'Vintage Sepia',
-        format: 'High-Res Poster',
-        mood: 'Vintage',
-        intensity: 'Medium',
-        atmosphere: 'Glowing Candlelight',
-        market: 'General Halloween Aesthetic',
-        length: 'Detailed'
+      gothicMansion: {
+        characters: 'Detailed skeleton witches (casting spells, magical)',
+        autumn: 'Berries (cranberries, autumn berries, clusters)',
+        scenes: 'Gothic mansions (detailed architecture, dramatic)',
+        accessories: 'Thorny roses (gothic, dark romance, dramatic)',
+        phrases: 'Mystic Hour',
+        typography: 'Gothic lettering (ornate, medieval, dramatic)',
+        colors: 'Deep purples, emerald greens, burgundy reds',
+        shading: 'Crosshatching (hand-drawn, artistic, textured)',
+        theme: 'Gothic & Dark (mysterious, elegant, dramatic)',
+        format: 'Logo Design (scalable, professional)',
+        complexity: 'Rich & Detailed',
+        aesthetic: 'Spooky Charm (Halloween magic, enchanting)'
       },
-      minimal: {
-        style: 'Spooky Minimal',
-        element: 'Bat',
-        background: 'Transparent Background',
-        typography: 'Elegant Cursive',
-        colors: 'Classic Orange & Black',
-        format: 'T-Shirt Print',
-        mood: 'Elegant',
-        intensity: 'Minimal',
-        atmosphere: 'Moonlight Shadows',
-        market: 'AliExpress Commercial',
-        length: 'Short'
+      vintageHarvest: {
+        characters: 'Pumpkins (with top hats, fancy, elegant)',
+        autumn: 'Wheat stalks (golden, harvest, rustic)',
+        scenes: 'Ornate headstones (detailed, gothic, decorative)',
+        accessories: 'Teacups & teapots (elegant, mystical, brewing)',
+        phrases: 'Harvest Blessings',
+        typography: 'Vintage retro (classic, nostalgic, timeless)',
+        colors: 'Vintage distressed overlays (aged, muted, worn)',
+        shading: 'Stippled shading (dotted, detailed, vintage)',
+        theme: 'Vintage Retro (classic, nostalgic, timeless)',
+        format: 'T-Shirt Print Ready (centered, proper margins)',
+        complexity: 'Rich & Detailed',
+        aesthetic: 'Vintage Retro Appeal (classic, timeless)'
+      },
+      neonGraffiti: {
+        characters: 'Group ghosts (formations, spooky gang, friends)',
+        autumn: 'Acorns (scattered, oak tree seeds, fall)',
+        scenes: 'Bats (flying in groups, silhouettes, spooky)',
+        accessories: 'Neon graffiti splashes (urban, bold, colorful)',
+        phrases: 'Ghoul Gang!',
+        typography: 'Bold graffiti neon glow (urban, bright, electric)',
+        colors: 'Neon graffiti splashes (bright, electric, urban)',
+        shading: 'Neon glow effects (electric, bright, modern)',
+        theme: 'Neon Modern (electric, bright, contemporary)',
+        format: 'Social Media Post (Instagram, Facebook ready)',
+        complexity: 'Maximum Impact',
+        aesthetic: 'Trendy Playful (modern, fun, youthful)'
+      },
+      farmhouseCozy: {
+        characters: 'Skeletons (cozy with beanie, casual, comfortable)',
+        autumn: 'Burlap bows (rustic, natural, harvest)',
+        scenes: 'Creeping ivy vines (gothic, climbing, mysterious)',
+        accessories: 'Quilting tools (needles, thread, crafting)',
+        phrases: 'Thankful & Blessed',
+        typography: 'Farmhouse script (rustic, handwritten, cozy)',
+        colors: 'Cozy farmhouse (cream, sage, rust, brown)',
+        shading: 'Embroidery thread texture (stitched, handmade)',
+        theme: 'Farmhouse Rustic (country, natural, cozy)',
+        format: 'Canva Template (editable, user-friendly)',
+        complexity: 'Balanced & Professional',
+        aesthetic: 'Cozy Autumn Warmth (seasonal, comfortable)'
+      },
+      fashionSkeleton: {
+        characters: 'Fashion skeletons (trendy, stylish, chic)',
+        autumn: 'Daisies (white, delicate, fall flowers)',
+        scenes: 'Twisted iron fences (gothic, ornamental, spooky)',
+        accessories: 'Leopard print accessories (wild, fashionable, trendy)',
+        phrases: 'BOO-TIFUL',
+        typography: 'Holographic rainbow lettering (iridescent, multi-color)',
+        colors: 'Holographic rainbow (iridescent, multi-color)',
+        shading: 'Metallic shine (reflective, premium, elegant)',
+        theme: 'Trendy & Fashion (modern, stylish, chic)',
+        format: 'Merchandise Ready (products, commercial use)',
+        complexity: 'Rich & Detailed',
+        aesthetic: 'Commercially Viable (market-ready, sellable)'
       }
     };
 
     function loadPreset(presetName) {
       const preset = presets[presetName];
       if (preset) {
-        document.getElementById('style').value = preset.style;
-        document.getElementById('element').value = preset.element;
-        document.getElementById('background').value = preset.background;
-        document.getElementById('typography').value = preset.typography;
-        document.getElementById('colors').value = preset.colors;
-        document.getElementById('format').value = preset.format;
-        document.getElementById('mood').value = preset.mood;
-        document.getElementById('intensity').value = preset.intensity;
-        document.getElementById('atmosphere').value = preset.atmosphere;
-        document.getElementById('market').value = preset.market;
-        document.getElementById('length').value = preset.length;
+        Object.keys(preset).forEach(key => {
+          const element = document.getElementById(key);
+          if (element) {
+            element.value = preset[key];
+          }
+        });
         generatePrompt();
       }
     }
 
     const adjectives = [
-      "spooky", "haunted", "glowing", "enchanted", "mystical",
-      "creepy", "gothic", "elegant", "kawaii", "detailed",
-      "holographic", "glittering", "vintage", "cyberpunk", "cartoonish"
+      "versatile", "stunning", "professional", "eye-catching", "trendy",
+      "spooky", "cute", "gothic", "cozy", "fashionable", "modern",
+      "detailed", "vibrant", "atmospheric", "commercial-quality", "Instagram-worthy"
     ];
 
     const linkingWords = [
-      "create", "design", "illustrate", "generate",
-      "in an elegant", "styled with", "decorated by",
-      "inspired by", "capturing the vibe of"
+      "create", "design", "generate", "craft", "produce",
+      "develop", "illustrate", "render", "build", "construct"
     ];
 
     function randomItem(arr) {
@@ -491,58 +741,140 @@
     }
 
     function generatePrompt() {
-      let style = document.getElementById("style").value;
-      let element = document.getElementById("element").value;
-      let background = document.getElementById("background").value;
-      let colors = document.getElementById("colors").value;
+      let characters = document.getElementById("characters").value;
+      let autumn = document.getElementById("autumn").value;
+      let scenes = document.getElementById("scenes").value;
+      let accessories = document.getElementById("accessories").value;
+      let phrases = document.getElementById("phrases").value;
       let typography = document.getElementById("typography").value;
-      let mood = document.getElementById("mood").value;
-      let intensity = document.getElementById("intensity").value;
-      let atmosphere = document.getElementById("atmosphere").value;
-      let market = document.getElementById("market").value;
+      let colors = document.getElementById("colors").value;
+      let shading = document.getElementById("shading").value;
+      let background = document.getElementById("background").value;
+      let theme = document.getElementById("theme").value;
       let format = document.getElementById("format").value;
-      let length = document.getElementById("length").value;
+      let complexity = document.getElementById("complexity").value;
+      let aesthetic = document.getElementById("aesthetic").value;
+      
+      // Get selected product types
+      let selectedProducts = [];
+      document.querySelectorAll('input[name="productType"]:checked').forEach(el => {
+        selectedProducts.push(el.value);
+      });
+      let productType = selectedProducts.length > 0 ? selectedProducts.join(", ") : "T-Shirt";
 
       let extras = [];
       document.querySelectorAll("input[type=checkbox]:checked").forEach(el => {
-        if (el.id !== "emojiToggle" && el.id !== "premiumEffects") {
+        if (!['transparentBg', 'printReady', 'highRes', 'noCutoff', 'properMargins', 'isolated', 'commercial', 'modern'].includes(el.id)) {
           extras.push(el.value);
         }
       });
 
-      const transparentOption = background.toLowerCase() === "transparent background" 
-        ? "with a fully transparent background so it can be used as stickers, overlays, T-shirts, and digital printables" 
-        : `set against a ${background.toLowerCase()} background`;
-
-      let prompt = `${randomItem(linkingWords)} a ${intensity.toLowerCase()}, ${randomItem(adjectives)} ${style} featuring ${element}`;
-      if (extras.length > 0) prompt += ` with ${extras.join(", ")}`;
-      prompt += `, ${transparentOption}, set in ${atmosphere.toLowerCase()}.`;
-      prompt += ` Use ${colors} with ${typography} typography. The mood should feel ${mood.toLowerCase()}, perfectly styled for ${market}.`;
-      prompt += ` Output as ${format}.`;
-
-      // Add length-based details
-      if(length==="Medium"){ prompt+= " Make it trendy, vibrant, and commercial-ready."; }
-      if(length==="Detailed"){ prompt+= " Ensure high resolution, professional quality, perfect for print and digital use, with stunning visual impact and commercial appeal."; }
-
-      if (document.getElementById("emojiToggle").checked) {
-        prompt += " 🎃👻🦇🕷️✨";
+      let prompt = `${randomItem(linkingWords)} a ${complexity.toLowerCase()}, ${randomItem(adjectives)} Halloween and autumn ${productType.toLowerCase()} design featuring ${characters.toLowerCase()}`;
+      
+      prompt += ` combined with ${autumn.toLowerCase()} and ${scenes.toLowerCase()}`;
+      prompt += ` including ${accessories.toLowerCase()}`;
+      
+      if (extras.length > 0) {
+        prompt += ` with decorative elements: ${extras.join(", ")}`;
       }
-      if (document.getElementById("premiumEffects").checked) {
-        prompt += " Add ultra-detailed glow, glitter, and holographic sparkle for a premium finish.";
+      
+      prompt += `. Product type: ${productType}. Theme: ${theme.toLowerCase()}. Include the text "${phrases}" using ${typography.toLowerCase()}.`;
+      prompt += ` Color palette: ${colors.toLowerCase()} with ${shading.toLowerCase()}.`;
+      prompt += ` Background: ${background.toLowerCase()}. Aesthetic style: ${aesthetic.toLowerCase()}. Output as ${format.toLowerCase()}.`;
+
+      // Add premium features
+      let premiumFeatures = [];
+      if (document.getElementById("transparentBg").checked) {
+        premiumFeatures.push("transparent background export capability");
       }
+      if (document.getElementById("printReady").checked) {
+        premiumFeatures.push("print-ready quality");
+      }
+      if (document.getElementById("highRes").checked) {
+        premiumFeatures.push("high resolution output");
+      }
+      if (document.getElementById("noCutoff").checked) {
+        premiumFeatures.push("no cut-off elements");
+      }
+      if (document.getElementById("properMargins").checked) {
+        premiumFeatures.push("proper margins for professional presentation");
+      }
+      if (document.getElementById("isolated").checked) {
+        premiumFeatures.push("isolated design composition");
+      }
+      if (document.getElementById("commercial").checked) {
+        premiumFeatures.push("commercial use ready licensing");
+      }
+      if (document.getElementById("modern").checked) {
+        premiumFeatures.push("modern, Instagram-worthy appeal");
+      }
+
+      if (premiumFeatures.length > 0) {
+        prompt += ` Ensure ${premiumFeatures.join(", ")}.`;
+      }
+
+      // Add product-specific optimization
+      let productOptimizations = [];
+      selectedProducts.forEach(product => {
+        switch(product) {
+          case "T-Shirt":
+            productOptimizations.push("t-shirt printing with proper placement and sizing");
+            break;
+          case "Hoodie":
+            productOptimizations.push("hoodie/sweatshirt printing with front chest placement considerations");
+            break;
+          case "Tote Bag":
+            productOptimizations.push("tote bag printing with handle placement and fabric considerations");
+            break;
+          case "Mug":
+            productOptimizations.push("mug printing with wrap-around design and handle awareness");
+            break;
+          case "Sticker":
+            productOptimizations.push("sticker production with clean cut lines and vibrant colors");
+            break;
+          case "Poster":
+            productOptimizations.push("poster display with framing considerations and wall hanging appeal");
+            break;
+          case "Phone Case":
+            productOptimizations.push("phone case printing with camera cutout and edge considerations");
+            break;
+          case "Pillow":
+            productOptimizations.push("pillow printing with fabric texture and comfort considerations");
+            break;
+          case "Notebook":
+            productOptimizations.push("notebook/journal cover design with spine and binding considerations");
+            break;
+          case "Greeting Card":
+            productOptimizations.push("greeting card layout with fold lines and envelope compatibility");
+            break;
+          case "Magnet":
+            productOptimizations.push("magnet production with strong adhesion and durability");
+            break;
+          case "Keychain":
+            productOptimizations.push("keychain design with attachment point and portability");
+            break;
+        }
+      });
+      let productOptimization = productOptimizations.length > 0 ? 
+        ` Optimize for ${productOptimizations.join(", ")}.` : 
+        " Optimize for versatile product applications.";
+      
+      prompt += " Create a design that perfectly blends spooky Halloween charm with cozy autumn warmth, combining vintage retro appeal with trendy playful styles." + productOptimization + " Perfect for Etsy listings, Canva templates, digital downloads, social media posts, and merchandise applications.";
 
       document.getElementById("output").value = prompt;
     }
 
     function randomizeAll(){
-      ['style','element','background','colors','typography','format','mood','intensity','atmosphere','market','length'].forEach(id=>{
+      ['characters','autumn','scenes','accessories','phrases','typography','colors','shading','background','theme','format','complexity','aesthetic'].forEach(id=>{
         let sel=document.getElementById(id);
-        sel.selectedIndex=Math.floor(Math.random()*sel.options.length);
+        if (sel) {
+          sel.selectedIndex=Math.floor(Math.random()*sel.options.length);
+        }
       });
       
       // Randomize checkboxes
       document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = Math.random() > 0.7; // 30% chance to be checked
+        checkbox.checked = Math.random() > 0.5; // 50% chance to be checked
       });
       
       generatePrompt();
@@ -553,7 +885,7 @@
       txt.select(); 
       try {
         document.execCommand('copy');
-        showNotification('✅ Prompt copied!');
+        showNotification('✅ Master Halloween + Autumn prompt copied!');
       } catch (err) {
         showNotification('❌ Copy failed. Please select and copy manually.');
       }
@@ -602,5 +934,5 @@
     // Generate initial prompt
     generatePrompt();
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97fbd5a0b1a3ab5d',t:'MTc1Nzk3ODIxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9805d74cd384aaa2',t:'MTc1ODA4MzE0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
